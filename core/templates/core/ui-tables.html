@@ -1,0 +1,73 @@
+{% extends "core/layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header">
+        <h4 class="card-title"> Simple Table</h4>
+      </div>
+      
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table tablesorter " id="">
+          
+            <thead class=" text-primary">
+           
+              <tr>
+                <th>
+                  Materia
+                </th>
+                <th>
+                  parcial 1
+                </th>
+                <th>
+                  parcial 2
+                </th>
+                <th>
+                  parcial 3
+                </th>
+                <th class="text-center">
+                  promedio
+                </th>
+              </tr>
+            </thead>
+             {% for datos in datos  %}
+            <tbody>
+              <tr>
+                <td>
+                  {{ datos.titulo }}
+                </td>
+                <td>
+                  {{ datos.parcial_1 }}
+                </td>
+                <td>
+                  {{ datos.parcial_2 }}
+                </td>
+                <td class="text-center">
+                  {{ datos.parcial_3 }}
+                </td>
+                <td>
+                {{ 'promedio' }}
+                </td>
+              </tr>
+            </tbody>
+              {% endfor %}
+          </table>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+ 
+ {% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

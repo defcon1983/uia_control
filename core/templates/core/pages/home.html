@@ -1,0 +1,35 @@
+{% extends "core/layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+ {% for blogs in blog %}
+ <div class="card mb-3">
+  <img class="card-img-top" src="{{ blogs.imagen.url }}">
+  <div class="card-body">
+    <h4 class="card-title">{{ blogs.titulo }}</h4>
+    <p class="card-text">{{ blogs.contenido }}</p>
+    <p class="card-text"><small class="text-muted">ver el post completo</small></p>
+  </div>
+</div> 
+{% endfor %}
+-
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+
+  </script>
+
+{% endblock javascripts %}
